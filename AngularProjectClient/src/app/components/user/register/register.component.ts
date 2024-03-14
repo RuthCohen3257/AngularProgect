@@ -29,7 +29,9 @@ export class RegisterComponent implements OnInit {
     this.name = this.route.snapshot.queryParamMap.get('name');
 
     this._userService.getUsers().subscribe(users => {
-      this.nextUserCode = users.length;
+      this.nextUserCode = users.length+1;
+      console.log("get-name" ,this.nextUserCode);
+      
     });
 
     this.registerForm = this.formBuilder.group({
@@ -39,10 +41,12 @@ export class RegisterComponent implements OnInit {
       Email: ['', [Validators.required, Validators.email, emailValidator]],
       Password: ['', [Validators.required, Validators.minLength(4)]]
     });
-
+    
+    
     this.registerForm.get('Password')?.valueChanges.subscribe(value => {
       this.updatePasswordStrength();
     });
+
   }
 
   updatePasswordStrength() {

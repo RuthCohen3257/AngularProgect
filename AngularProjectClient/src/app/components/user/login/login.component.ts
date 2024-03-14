@@ -60,8 +60,12 @@ export class LoginComponent implements OnInit {
               }
               else {
                 console.log("there is not this name")
+                Swal.fire({
+                  icon: 'error',
+                  title: 'New user!',
+                  text: 'User does not exist in the system,please sign up.'
+                });
                 this.showRotatingIcon = true; 
-
                 setTimeout(() => {
                   this.router.navigate(['/user/register'], { queryParams: { name: name } });
 

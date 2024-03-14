@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Recipe } from '../../../models/recipe.model';
 import { Category } from '../../../models/category.model';
 import { CategoryService } from '../category.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-recipe',
@@ -85,7 +86,14 @@ export class AddRecipeComponent implements OnInit {
   addRecipe() {
     console.log(this.recipeForm.value);
     
-    
+    if(!sessionStorage.getItem('userId')){
+      Swal.fire({
+        icon: 'error',
+        title: ' No permission to add a recipe!',
+        text: 'You must first log in.'
+      });
+      this.router.navigate(['/user/login']);
+    }
     if (this.recipeForm.valid) {
       const userId: any = sessionStorage.getItem('userId');
       console.log("-----usercode---", userId)
@@ -104,9 +112,14 @@ export class AddRecipeComponent implements OnInit {
       };
       console.log(newRecipe);
 
-      if (this.recipeForm.valid) {
+      // if (this.recipeForm.valid) {
         this.recipeService.addRecipe(newRecipe).subscribe({
           next: (res) => {
+            Swal.fire({
+              icon: 'success',
+              title: 'The recipe added successfully',
+              text: 'Thank You!'
+            });
             console.log("the recipe added successfully");
             this.router.navigate(['/recipe/recipes-list']);
           },
@@ -114,9 +127,14 @@ export class AddRecipeComponent implements OnInit {
             console.log(err);
           }
         })
-      }
+      // }
     }
     else{
+      Swal.fire({
+        icon: 'error',
+        title: ' Error!',
+        text: 'please fill out all the form.'
+      });
       console.log("please fill out all the form");
       
     }

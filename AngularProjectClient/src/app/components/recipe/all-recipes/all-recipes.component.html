@@ -10,7 +10,7 @@
 <p-sidebar [(visible)]="sidebarVisible2" position="left" class="custom-sidebar">
     <div id="side">
         <div id="time-slider" class="slider">
-            <h3 class="h-filter">preparation time</h3>
+            <h3 class="h-filter"><b>preparation time</b></h3>
             <div>
                 <mat-slider class="slider" orientation="vertical" [color]="'accent'" [style.width.vw]="12"
                     class="example-margin" [disabled]="false" [max]="100" [min]="0" [step]="1" [discrete]="true"
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div id="level-slider" class="slider">
-            <h3 class="h-filter">Level of difficulty</h3>
+            <h3 class="h-filter"><b>Level of difficulty</b></h3>
             <div>
                 <mat-slider class="slider" orientation="vertical" [color]="'warn'" [style.width.vw]="12"
                     class="example-margin" [disabled]="disabled" [max]="5" [min]="1" [step]="step"
@@ -30,11 +30,11 @@
             </div>
         </div>
         <section class="categories-section">
-            <h4 class="h-filter">Select a catagory</h4>
-            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(1)"></mat-checkbox>Showcase cakes</p>
-            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(2)"></mat-checkbox>Petipours</p>
-            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(3)"></mat-checkbox>Pastries</p>
-            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(4)"></mat-checkbox>Desserts</p>
+            <h4 class="h-filter"><b>Select a catagory</b></h4>
+            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(1)"></mat-checkbox><b>Showcase cakes</b></p>
+            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(2)"></mat-checkbox><b>Petipours</b></p>
+            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(3)"></mat-checkbox><b>Pastries</b></p>
+            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(4)"></mat-checkbox><b>Desserts</b></p>
         </section>
     </div>
 </p-sidebar>

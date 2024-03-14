@@ -315,7 +315,7 @@ namespace AngularProjectServer.Controllers
 
         };
 
-    private static int count = 2;
+    private static int count = 15;
     // GET: api/<RecipeController>
     [HttpGet]
     public IEnumerable<Recipe> Get()

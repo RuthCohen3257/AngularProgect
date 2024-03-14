@@ -16,10 +16,12 @@ import Swal from 'sweetalert2';
 })
 export class EditRecipeComponent {
   preparationStepsArray: any;
+  ingredients:string[]=[];
   categories: Category[] = [];
   recipeForm!: FormGroup;
-  recipe!: Recipe
-
+  recipe!: Recipe;
+  currentRecipeId!:number;
+  
   firstFormGroup = this._formBuilder.group({
     recipeName: ['', Validators.required]
   });
@@ -53,19 +55,17 @@ export class EditRecipeComponent {
       sixthFormGroup: this.sixthFormGroup,
       seventhFormGroup: this.seventhFormGroup
     });
-    const recipeId = this.route.snapshot.paramMap.get('id');
-    this.loadrecipeToTheInputs(recipeId);
+    this.currentRecipeId = Number(this.route.snapshot.paramMap.get('id'));
+    this.loadrecipeToTheInputs(this.currentRecipeId);
     this.loadCategories();
   }
-  loadrecipeToTheInputs(id: string | null) {
+  loadrecipeToTheInputs(id: number|null) {
     this.recipeService.getById(Number(id))
       .subscribe(r => {
         console.log(r);
-        debugger
         this.recipe = r;
-        this.firstFormGroup.patchValue({
-          recipeName: this.recipe.recipeName
-        });
+
+        this.firstFormGroup.patchValue({recipeName: this.recipe.recipeName});
         this.secondFormGroup.patchValue({ categoryCode: this.recipe.categoryId.toString() });
         this.thirdFormGroup.patchValue({ preparationTimeInMinutes: this.recipe.preparationTimeInMinutes.toString() });
         this.forthFormGroup.patchValue({ difficultyLevel: this.recipe.difficultyLevel.toString() });
@@ -86,12 +86,62 @@ export class EditRecipeComponent {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        Swal.fire("Saved!", "", "success");
+
+        if (this.recipeForm.valid) {
+          const userId: any = sessionStorage.getItem('userId');
+          console.log("-----usercode---", userId)
+          this.recipe = {
+            recipeId:this.currentRecipeId,
+            recipeName: this.firstFormGroup.value.recipeName!,
+            categoryId: Number(this.secondFormGroup.value.categoryCode),
+            preparationTimeInMinutes: Number(this.thirdFormGroup.value.preparationTimeInMinutes),
+            difficultyLevel: Number(this.forthFormGroup.value.difficultyLevel),
+            creationDate: new Date(),
+            ingredients: (this.sixthFormGroup.value.ingredients?.split('\n') as string[]) || [],
+            preparationSteps: (this.fifthFormGroup.value.preparationSteps?.split('\n') as string[]) || [],
+            userId: parseInt(userId),
+            imageUrl: this.seventhFormGroup.value.imageRoute!,
+            
+          };
+          
+            this.recipeService.updateRecipe(this.recipe).subscribe({
+              next: (res) => {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'The recipe update successfully',
+                  text: 'See You!'
+                });
+                console.log("the recipe update successfully");
+                Swal.fire("Saved!", "", "success");
+                this.router.navigate(['/recipe/recipes-list']);
+              },
+              error: (err) => {
+                console.log(err);
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Error!',
+                  text: 'An error occurred while fetching update.'
+                });
+              }
+            })    
+        }
+        else{
+          Swal.fire({
+            icon: 'error',
+            title: ' Error!',
+            text: 'please fill out all the form.'
+          });
+          console.log("please fill out all the form");
+          
+        }
+        
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
+        this.router.navigate(['/recipe/recipes-list']);
       }
     });
   }
+
   loadCategories(){
     this.categoryService.getCategories()
     .subscribe(c=>{

@@ -89,7 +89,12 @@ export class SmallRecipeComponent implements OnInit {
       });
     } else {
       console.log("No permission to edit the recipe.");
-      alert('You don\'t have permission to delete this recipe.');
+      //alert('You don\'t have permission to delete this recipe.');
+      Swal.fire({
+        icon: 'error',
+        title: ' No permission to delete the recipe!',
+        text: 'Only the owner can delete it.'
+      });
     }
   }
   removeComponentFromDOM() {

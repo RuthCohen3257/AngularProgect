@@ -23,7 +23,7 @@ export class AllRecipesComponent implements OnInit {
   recipesList: Recipe[] = [];
   selectedCategories: number[] = []; // Selected categories for filtering
   recipeNameFilter: string = '';
-
+  
   constructor(private _recipeService: RecipeService) { }
 
   ngOnInit(): void {
