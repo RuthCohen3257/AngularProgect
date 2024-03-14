@@ -1,0 +1,55 @@
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <h2>Register</h2>
+        </div>
+        <div class="login-content">
+            <form [formGroup]="registerForm" class="login-form" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="fill" class="form-field">
+                    <mat-label>Name</mat-label>
+                    <div class="input-with-icon">
+                        <input matInput placeholder="Enter your name" formControlName="Name" [value]="name">
+                        <mat-icon>person</mat-icon>
+
+                    </div>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="form-field">
+                    <mat-label>Address</mat-label>
+                    <div class="input-with-icon">
+                        <input matInput placeholder="Enter your address" formControlName="Address">
+                        <mat-icon>location_on</mat-icon>
+
+                    </div>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="form-field">
+                    <mat-label>Email</mat-label>
+                    <div class="input-with-icon">
+                        <input matInput placeholder="Enter your email" formControlName="Email">
+                        <mat-icon>email</mat-icon>
+
+                    </div>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="form-field">
+                    <mat-label>Password</mat-label>
+                    <div class="input-with-icon">
+                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter your password"
+                            formControlName="Password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </div>
+                    <div *ngIf="passwordStrength">
+                        <span
+                            [ngClass]="{ 'red': passwordStrength === 'weak', 'orange': passwordStrength === 'medium', 'green': passwordStrength === 'strong' }">
+                            Password Strength: {{ passwordStrength }}
+                        </span>
+                         </div>      
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="submit-button" type="submit"
+                [disabled]="!registerForm.valid">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

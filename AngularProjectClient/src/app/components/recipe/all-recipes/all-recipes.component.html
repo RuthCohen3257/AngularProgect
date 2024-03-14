@@ -1,0 +1,61 @@
+
+<div class="custom-input" id="search">
+    <input class="narrow-input" type="text" placeholder="search" [(ngModel)]="recipeNameFilter"
+        (ngModelChange)="filterByName()">
+    <button mat-icon-button>
+        <mat-icon style="color: #ffffff;">search</mat-icon>
+    </button>
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible2" position="left" class="custom-sidebar">
+    <div id="side">
+        <div id="time-slider" class="slider">
+            <h3 class="h-filter">preparation time</h3>
+            <div>
+                <mat-slider class="slider" orientation="vertical" [color]="'accent'" [style.width.vw]="12"
+                    class="example-margin" [disabled]="false" [max]="100" [min]="0" [step]="1" [discrete]="true"
+                    [showTickMarks]="false" (input)="filterByTime(value1)">
+                    <input matSliderThumb [(ngModel)]="value1" #slider>
+                </mat-slider>
+            </div>
+        </div>
+        <div id="level-slider" class="slider">
+            <h3 class="h-filter">Level of difficulty</h3>
+            <div>
+                <mat-slider class="slider" orientation="vertical" [color]="'warn'" [style.width.vw]="12"
+                    class="example-margin" [disabled]="disabled" [max]="5" [min]="1" [step]="step"
+                    [discrete]="thumbLabel" [showTickMarks]="showTicks" (input)="filterByDifficulty(value)">
+                    <input matSliderThumb [(ngModel)]="value" #slider>
+                </mat-slider>
+            </div>
+        </div>
+        <section class="categories-section">
+            <h4 class="h-filter">Select a catagory</h4>
+            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(1)"></mat-checkbox>Showcase cakes</p>
+            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(2)"></mat-checkbox>Petipours</p>
+            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(3)"></mat-checkbox>Pastries</p>
+            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(4)"></mat-checkbox>Desserts</p>
+        </section>
+    </div>
+</p-sidebar>
+
+<button mat-button id="buttonSideBar" (click)="sidebarVisible2 = true" *ngIf="sidebarVisible2 !== true">
+    <mat-icon color="black">filter_alt</mat-icon>
+    filter
+</button>
+
+<div class="recipes-list" id="recipe-list">
+
+    <h1 class="animate__animated animate__slideInUp">Recipes and tips</h1>
+    <div class="h-filter1">
+       
+        <div class="cards-container">
+            <!-- <span><i class="fas fa-angle-double-down"></i></span> -->
+            <div *ngFor="let recipe of filteredRecipes">
+                <app-small-recipe [recipe]="recipe"></app-small-recipe>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- </div> -->

@@ -1,0 +1,137 @@
+<div id="allSteps">
+    <mat-stepper orientation="vertical" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Fill out recipe name</ng-template>
+                    <mat-form-field>
+                        <mat-label>RecipeName</mat-label>
+                        <input matInput formControlName="recipeName" required>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Choose recipe category</ng-template>
+                <mat-form-field>
+                    <mat-label>Category</mat-label>
+                    <mat-select formControlName="categoryCode">
+                        <mat-option *ngFor="let c of categories" [value]="c.id">
+                            <mat-icon>{{c.iconRoute}}</mat-icon>
+                            {{c.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Fill out preparation time</ng-template>
+                <mat-form-field>
+                    <mat-label>Preparation time in minutes</mat-label>
+                    <input matInput type="number" min="1" formControlName="preparationTime">
+
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="forthFormGroup">
+            <form [formGroup]="forthFormGroup">
+                <ng-template matStepLabel>Fill out level difficulty</ng-template>
+                <mat-form-field>
+                    <mat-label>level difficulty (1-5)</mat-label>
+                    <input matInput type="number" min="1" max="5" formControlName="difficultyLevel">
+
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="fifthFormGroup">
+            <form [formGroup]="fifthFormGroup">
+                <ng-template matStepLabel>Fill out the preperation steps</ng-template>
+                <div formArrayName="preparationSteps">
+                    <div *ngFor="let step of preparationStepsArray.controls; let i = index">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Preperation steps</mat-label>
+
+                            <textarea matInput [formControlName]="i" placeholder="preparationStep"></textarea>
+                        </mat-form-field>
+                        <button mat-icon-button (click)="removeStep(i)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+
+                    <br>
+                    <button mat-raised-button color="pink" type="button" (click)="addStep()">הוסף שלב הכנה</button>
+
+                </div>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="sixthFormGroup">
+            <form [formGroup]="sixthFormGroup">
+                <ng-template matStepLabel>Fill out the ingredients</ng-template>
+                <div formArrayName="ingredients">
+                    <div *ngFor="let step of ingredients.controls; let i = index">
+                        <mat-form-field>
+                            <mat-label>Ingredients</mat-label>
+                            <input matInput [formControlName]="i">
+                        </mat-form-field>
+                        <button mat-icon-button (click)="removeIngredients(i)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                    <br>
+                    <button mat-raised-button color="pink" type="button" (click)="addIngredients()">הוסף רכיב</button>
+
+                </div>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="seventhFormGroup">
+            <form [formGroup]="seventhFormGroup">
+                <ng-template matStepLabel>Fill out the image Route</ng-template>
+                <mat-form-field>
+                    <mat-label>Image Route</mat-label>
+                    <input matInput formControlName="imageRoute">
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <!-- <button mat-button matStepperNext>Next</button> -->
+                    <button mat-button (click)="addRecipe()">Save</button>
+
+                </div>
+            </form>
+        </mat-step>
+        <!-- <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button (click)="addRecipe()">Save</button>
+        </div>
+    </mat-step> -->
+    </mat-stepper>
+</div>

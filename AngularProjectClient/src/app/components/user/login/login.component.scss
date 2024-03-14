@@ -1,0 +1,97 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-card {
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgba(211, 195, 195, 0.174);
+
+
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  color: #a77325db;
+
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+  color: #a77325db;
+}
+
+.error-message {
+  color: #a77325db;
+  margin-top: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #f5f2ed;
+  color: rgba(46, 46, 20, 0.349);
+  border: 2px solid #a77325db;
+  border-radius: 2px;
+}
+
+.submit-button:hover {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #a77325db;
+  ;
+  color: rgb(255, 255, 255);
+  border-radius: 2px, ;
+}
+
+.allp {
+  // background-image: url('../../../../assets/images/bacground/5.jpg');
+  background-size: cover;
+  /* כדי להתאים את התמונה לגודל של החלון */
+  background-attachment: fixed;
+  /* כדי להשאיר את התמונה במקום כאשר ממסך נגללים */
+  background-position: center center;
+  /* כדי למקד את התמונה באמצע הדף */
+  background-repeat: no-repeat;
+  /* כדי לא לשקול את התמונה */
+  margin-top: 7%;
+}
+.rotating-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: large;
+}
+
+.rotating-icon {
+  animation: rotate 2s linear infinite;
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+::ng-deep .form-field.mat-focused .mat-form-field-outline {
+  color: white;
+  /* Change this to the desired color */
+  background-color: a77325db;
+}

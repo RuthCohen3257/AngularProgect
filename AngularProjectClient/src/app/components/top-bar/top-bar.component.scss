@@ -1,0 +1,85 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #ffffff;
+  color: white;
+}
+
+.mat-toolbar {
+  padding: 0 16px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.centered-content {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-button,
+.search-button,
+.profile-button {
+  margin-right: 10px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.profile-image {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-color: blanchedalmond;
+}
+
+.badge {
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+  }
+
+  .centered-content {
+    margin-left: 0;
+  }
+
+  .search-container,
+  .menu-button,
+  .profile-button {
+    margin-bottom: 10px;
+  }
+}
+.centered-content {
+  display: flex;
+  align-items: center;
+  margin: 0 auto; /* מרכז את הקישורים באופן אופקי */
+  margin-left: 130px;
+}
+::ng-deep .mat-menu-panel {
+  background-color: white; /* צביעת הרקע בצבע לבן */
+}

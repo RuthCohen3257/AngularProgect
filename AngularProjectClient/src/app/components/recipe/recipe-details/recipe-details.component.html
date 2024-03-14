@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="header">
+    <button mat-button *ngIf="isCurrentUserRecipeOwner()" class="delete-button" (click)="deleteRecipe()">Delete Recipe</button>
+
+    <div class="user-info" *ngIf="user">
+      <div class="user-circle">{{ user.name.charAt(0) }}</div>
+      <div class="username">{{ user.name }}</div>
+    </div>
+
+    <div class="recipe-details">
+
+      <h1 class="recipe-name" *ngIf="recipe">{{ recipe.recipeName }}</h1>
+      <div class="details">
+        <div class="difficulty">
+          <b>Difficulty level:</b>
+          <ng-container *ngFor="let icon of getDifficultyIcons(recipe.difficultyLevel)">
+            <mat-icon>star</mat-icon>
+          </ng-container>
+        </div>
+        <div class="preparation-time">
+          <b>Preparation time:</b> {{ recipe.preparationTimeInMinutes | preparationTime }}
+        </div>
+        <div *ngIf="category" class="category-details">
+          <mat-icon>{{ category.iconRoute }}</mat-icon>
+          <span>{{ category.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-content">
+    <div class="recipe-img">
+      <img [src]="recipe.imageUrl" alt="recipe image">
+    </div>
+
+    <div class="recipe-details">
+      <div class="list-title">Ingredients:</div>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+      </ul>
+    </div>
+
+    <div class="recipe-details">
+      <div class="list-title">Preparation:</div>
+      <ol>
+        <li *ngFor="let step of recipe.preparationSteps">{{ step }}</li>
+      </ol>
+    </div>
+  </div>
+
+</div>
