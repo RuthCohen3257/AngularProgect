@@ -21,7 +21,6 @@ export class SmallRecipeComponent implements OnInit {
   createdByUserCode!: number;
   createdByUsername!: string;
 
-
   constructor(private router: Router, private _recipe: RecipeService, private _user: UserService, private categoryService: CategoryService, private recipeService: RecipeService, private userService: UserService) { }
   ngOnInit(): void {
     this.icon = this.categoryIcon();
@@ -49,6 +48,11 @@ export class SmallRecipeComponent implements OnInit {
       this.router.navigate(['recipe/recipes-list', this.recipe.recipeId], { queryParams: { index: this.recipe.recipeId } })
     }
     else {
+      Swal.fire({
+        icon: 'error',
+        title: ' No permission to view the recipe!',
+        text: 'Username or password not found in session storage.'
+      });
       console.log('Username or password not found in local storage.');
       this.router.navigate(['user/login']);
     }
@@ -72,18 +76,26 @@ export class SmallRecipeComponent implements OnInit {
         next: () => {
           console.log('Recipe deleted successfully!');
           // Remove the component visually
-          this.removeComponentFromDOM();
+          //this.removeComponentFromDOM();
           this._recipe.deleteRecipe(this.recipe.recipeId).subscribe({
             next:()=>{
               Swal.fire({
                 icon: 'success',
                 title: 'The recipe deleted successfully!',
                 text: 'See you!.'
-              });
-
+              }).then(() => {
+                setTimeout(() => {
+                  location.reload();
+                }, 1000);
+              })
+              //this.router.navigate(['recipe/recipes-list']);
             },
             error:()=>{
-              
+              Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: 'An error occurred while fetching recipe.'
+              });
             }
           })
           // Optional: Redirect or refresh the page
@@ -112,7 +124,7 @@ export class SmallRecipeComponent implements OnInit {
   }
   removeComponentFromDOM() {
     // גישה לרכיב DOM באמצעות מזהה ייחודי
-    const element = document.getElementById(`recipe-${this.recipe.recipeId}`);
+    const element = document.getElementById(`recipe/recipes-list/${this.recipe.recipeId}`);
     // הסרת הרכיב מה-DOM
     if (element) {
       element.removeChild(element);
