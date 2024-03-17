@@ -8,13 +8,11 @@ namespace AngularProjectServer.Controllers
   [ApiController]
   public class UserController : ControllerBase
   {
-        public static List<User> users = new List<User>
+    public static List<User> users = new List<User>
         {
             new User{Id=1,Name="ruthy",Address="add1",Email="add1@",Password="3361"},
             new User{Id=2,Name="chavi",Address="add2",Email="add2@",Password="4576"},
         };
-
-
     // GET: api/<UserController>
     [HttpGet]
     public IEnumerable<User> GetUsers()

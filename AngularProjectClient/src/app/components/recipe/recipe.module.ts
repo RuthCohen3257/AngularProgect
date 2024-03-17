@@ -23,6 +23,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
     declarations: [AddRecipeComponent, AllRecipesComponent, EditRecipeComponent,
@@ -43,7 +44,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
         MatIconModule,
         DifficultyLevelPipe,
         MatSidenavModule,
-        MatSliderModule
+        MatSliderModule,
+        ProgressSpinnerModule
     ]
 })
 export class RecipeModule { }

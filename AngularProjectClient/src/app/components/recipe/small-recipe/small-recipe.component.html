@@ -1,38 +1,37 @@
-
-  <mat-card class="example-card">
-    <div (click)="toRecipeDetails()">
+<mat-card class="example-card" >
     <mat-card-header>
-      <mat-icon>{{this.icon}}</mat-icon>
+        <mat-icon>{{this.icon}}</mat-icon>
 
-      <mat-card-title>{{ recipe.recipeName }}</mat-card-title>
-      <mat-card-subtitle>made by: {{createdByUsername }} </mat-card-subtitle>
+        <mat-card-title><b>{{ recipe.recipeName }}</b></mat-card-title>
+
+        <mat-card-subtitle>By {{createdByUsername}}</mat-card-subtitle>
     </mat-card-header>
-    <mat-card class="father">
-      <img mat-card-image [src]="recipe.imageUrl" alt="Photo of a Shiba Inu">
-      <div class=" scale-up-ver-bottom " (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"
-        [class.hovered]="isHovered">
-      </div>
-    </mat-card>
-    <mat-card-content *ngIf="recipe">
-      <mat-card-subtitle>
+
+    <img mat-card-image src={{recipe.imageUrl}} class="img-recipe" (click)="toRecipeDetails()">
+
+    <mat-card-content>
         <div class="details">
-          <p><mat-icon>timer</mat-icon>
-            {{ recipe.preparationTimeInMinutes | preparationTime }}
-          </p>
-          <p>{{recipe.creationDate.toString().slice(0,10)}}</p>
+            <p>
+                <mat-icon matSuffix>timer</mat-icon>
+
+                {{ recipe.preparationTimeInMinutes| preparationTime }}
+            </p>
+            <p>{{recipe.creationDate.toString().slice(0,10)}}</p>
 
         </div>
-        <span *ngFor="let icon of recipe.difficultyLevel | difficultyLevel ">
-          <mat-icon>{{ icon }}</mat-icon>
+        <span *ngFor="let icon of recipe.difficultyLevel | difficultyLevel " class="icon-category">
+            <mat-icon>{{ icon }}</mat-icon>
         </span>
 
-
-      </mat-card-subtitle>
-
     </mat-card-content>
-</div>
-<mat-card-actions>
-  <button mat-button (click)="editRecipe()">Edit</button>
-  <button mat-button (click)="deleteRecipe()">Delete</button>
-</mat-card-actions>
+    <div class="btnDiv">
+        <mat-card-actions>
+            <button mat-button class="btnCard" (click)="deleteRecipe()">Delete</button>
+        </mat-card-actions>
+
+        <mat-card-actions>
+            <button mat-button class="btnCard" (click)="editRecipe()">Edit</button>
+        </mat-card-actions>
+    </div>
+
 </mat-card>

@@ -2,13 +2,15 @@
   #steps{
     margin-left: 40%;
   }
+
   .mat-stepper-vertical {
-    margin-top: 8px;
+    margin-top: 150px;
   }
   
   .mat-mdc-form-field {
     margin-top: 16px;
   }
+
   :host {
     display: flex;
     flex-direction: column;
@@ -25,4 +27,25 @@
   }
   
 
+  #allSteps{
+    margin-left: 40%;
+  
+  }
+  .color{
+    border-color: #a77325db;
+  }
+  
+  .btn1{
+    background-color: #a7732577;
+  
+  }
+  .btnCard{
+
+    background-color: #a77325db;
+  }
+  .container-btn{
+    display: flex;
+    justify-content: space-evenly;
+
+  }
   

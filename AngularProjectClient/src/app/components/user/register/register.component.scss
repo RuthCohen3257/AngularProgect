@@ -1,73 +1,91 @@
-/* Styling for the login container */
 .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .login-form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  
-    .login-card {
-      background-color: #f5f5f5;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      width: 400px; /* Adjust width as needed */
-  
-      .login-header {
-        text-align: center;
-        margin-bottom: 20px;
-  
-        h2 {
-          color: #333;
+    flex-direction: column;
+    color: #a77325db;
+    background-color: #00000057;
+    margin-top: 280px;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .login-card {
+    .login-header {
+      text-align: center;
+      margin-bottom: 20px;
+
+
+    }
+
+    .login-content {
+      .form-field {
+        width: 100%;
+        margin-bottom: 15px;
+
+        .input-with-icon {
+          display: flex;
+          align-items: center;
+
+          mat-icon {
+            margin-right: 10px;
+            color: #a77325db;
+          }
+
+          input {
+            width: 100%;
+          }
+        }
+
+        ul {
+          margin-top: 5px;
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            margin-top: 5px;
+
+            &.red {
+              color: red;
+            }
+
+            &.green {
+              color: green;
+            }
+          }
         }
       }
-  
-      .login-content {
-        .form-field {
-          width: 100%;
-          margin-bottom: 15px;
-  
-          .input-with-icon {
-            display: flex;
-            align-items: center;
-  
-            mat-icon {
-              margin-right: 10px;
-              color: #666;
-            }
-  
-            input {
-              width: 100%;
-            }
-          }
-  
-          ul {
-            margin-top: 5px;
-            list-style-type: none;
-            padding: 0;
-  
-            li {
-              margin-top: 5px;
-  
-              &.red {
-                color: red;
-              }
-  
-              &.green {
-                color: green;
-              }
-            }
-          }
-        }
-  
-        .submit-button {
-          width: 100%;
-        }
+
+
+      .submit-button {
+        width: 100%;
+        margin-top: 20px;
+        background-color: #f5f2ed;
+        color: rgba(46, 46, 20, 0.349);
+        border: 2px solid #a77325db;
+        border-radius: 2px;
+      }
+
+      .submit-button:hover {
+        width: 100%;
+        margin-top: 20px;
+        background-color: #a77325db;
+        ;
+        color: rgb(255, 255, 255);
+        border-radius: 2px, ;
       }
     }
   }
-  
-  //////////////
-  .passwordStrength {
+}
+
+.passwordStrength {
   display: block;
   margin-top: 5px;
   padding: 5px;
@@ -86,4 +104,10 @@
 
 .green {
   color: #008000;
+}
+
+h1 {
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
 }

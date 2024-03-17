@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AngularProjectServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d92d802883761ec5a2ab7a89af13e86ebab68007")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("AngularProjectServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AngularProjectServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

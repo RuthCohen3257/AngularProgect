@@ -1,61 +1,55 @@
+<div class="search-container">
 
-<div class="custom-input" id="search">
-    <input class="narrow-input" type="text" placeholder="search" [(ngModel)]="recipeNameFilter"
-        (ngModelChange)="filterByName()">
-    <button mat-icon-button>
-        <mat-icon style="color: #ffffff;">search</mat-icon>
+    <button class="btn filterBtn" type="button" (click)="sidebarVisible = true">
+        Filter
+        <mat-icon>filter_list</mat-icon>
     </button>
+
+
+    <div class="search-input">
+        <input autocomplete="on" type="search" class="form-control searchInput" [(ngModel)]="searchTerm"
+            (ngModelChange)="searchRecipes()" placeholder="Type something... " />
+        <button class="btn searchBtn" type="button" (click)="searchRecipes()">
+            <mat-icon>search</mat-icon>
+                </button>
+    </div>
+
 </div>
 
-<p-sidebar [(visible)]="sidebarVisible2" position="left" class="custom-sidebar">
-    <div id="side">
-        <div id="time-slider" class="slider">
-            <h3 class="h-filter"><b>preparation time</b></h3>
+<div *ngIf="isLoading" class="spinner-grow" role="status" style="width:6rem; height: 6rem; color:white  ">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<div class="allRecipesContainer" *ngIf="!isLoading">
+    <div class="allRecipesCards">
+        <a *ngFor="let recipe of filteredRecipes">
+            <app-small-recipe [recipe]="recipe"></app-small-recipe>
+        </a>
+    </div>
+
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible" color="warn" class="side">
+    <div class="sideBar">
+        <div class="filterContainer">
+            <p>Duration of preparation in minutes:</p>
+            <mat-slider color="warn" class="custom-slider" min="5" max="180" step="5" showTickMarks discrete style="width: 90%;">
+                <input matSliderThumb [(ngModel)]="selectedPreparationTime">
+            </mat-slider>
+            <p>Categories:</p>
             <div>
-                <mat-slider class="slider" orientation="vertical" [color]="'accent'" [style.width.vw]="12"
-                    class="example-margin" [disabled]="false" [max]="100" [min]="0" [step]="1" [discrete]="true"
-                    [showTickMarks]="false" (input)="filterByTime(value1)">
-                    <input matSliderThumb [(ngModel)]="value1" #slider>
-                </mat-slider>
+                <div>
+                    <div class="filter-category">
+                        <mat-checkbox color="warn" *ngFor="let category of categories"
+                            [(ngModel)]="selectedCategories[category.id.toString()]">
+                            {{ category.name }}
+                        </mat-checkbox>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="level-slider" class="slider">
-            <h3 class="h-filter"><b>Level of difficulty</b></h3>
-            <div>
-                <mat-slider class="slider" orientation="vertical" [color]="'warn'" [style.width.vw]="12"
-                    class="example-margin" [disabled]="disabled" [max]="5" [min]="1" [step]="step"
-                    [discrete]="thumbLabel" [showTickMarks]="showTicks" (input)="filterByDifficulty(value)">
-                    <input matSliderThumb [(ngModel)]="value" #slider>
-                </mat-slider>
-            </div>
-        </div>
-        <section class="categories-section">
-            <h4 class="h-filter"><b>Select a catagory</b></h4>
-            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(1)"></mat-checkbox><b>Showcase cakes</b></p>
-            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(2)"></mat-checkbox><b>Petipours</b></p>
-            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(3)"></mat-checkbox><b>Pastries</b></p>
-            <p class="checkBoxContent"><mat-checkbox (change)="filterByCategory(4)"></mat-checkbox><b>Desserts</b></p>
-        </section>
+        <button class="btn" type="button" (click)="filterRecipes()">
+            Filter Recipes
+        </button>
     </div>
 </p-sidebar>
-
-<button mat-button id="buttonSideBar" (click)="sidebarVisible2 = true" *ngIf="sidebarVisible2 !== true">
-    <mat-icon color="black">filter_alt</mat-icon>
-    filter
-</button>
-
-<div class="recipes-list" id="recipe-list">
-
-    <h1 class="animate__animated animate__slideInUp">Recipes and tips</h1>
-    <div class="h-filter1">
-       
-        <div class="cards-container">
-            <!-- <span><i class="fas fa-angle-double-down"></i></span> -->
-            <div *ngFor="let recipe of filteredRecipes">
-                <app-small-recipe [recipe]="recipe"></app-small-recipe>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- </div> -->

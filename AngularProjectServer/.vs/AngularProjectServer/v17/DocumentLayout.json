@@ -1,22 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\AngularProject\\AngularProjectServer\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|c:\\users\\user\\desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\angularproject\\angularprojectserver\\angularprojectserver\\controllers\\recipecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|c:\\users\\user\\downloads\\angularproject-main\\angularprojectserver\\angularprojectserver\\controllers\\recipecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|solutionrelative:angularprojectserver\\controllers\\recipecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|c:\\users\\user\\desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\angularproject\\angularprojectserver\\angularprojectserver\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|solutionrelative:angularprojectserver\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|c:\\users\\user\\desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\angularproject\\angularprojectserver\\angularprojectserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|solutionrelative:angularprojectserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|c:\\users\\user\\desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\angularproject\\angularprojectserver\\angularprojectserver\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|c:\\users\\user\\downloads\\angularproject-main\\angularprojectserver\\angularprojectserver\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|solutionrelative:angularprojectserver\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|c:\\users\\user\\downloads\\angularproject-main\\angularprojectserver\\angularprojectserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63201D1E-EFC1-434F-BED5-24274CE12D0C}|AngularProjectServer\\AngularProjectServer.csproj|solutionrelative:angularprojectserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,59 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Recipe.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\AngularProject\\AngularProjectServer\\AngularProjectServer\\Recipe.cs",
-              "RelativeDocumentMoniker": "AngularProjectServer\\Recipe.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\AngularProject\\AngularProjectServer\\AngularProjectServer\\Recipe.cs",
-              "RelativeToolTip": "AngularProjectServer\\Recipe.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T19:07:16.865Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\AngularProject\\AngularProjectServer\\AngularProjectServer\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "AngularProjectServer\\Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\AngularProject\\AngularProjectServer\\AngularProjectServer\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "AngularProjectServer\\Controllers\\CategoryController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T12:52:21.785Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "RecipeController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\AngularProject\\AngularProjectServer\\AngularProjectServer\\Controllers\\RecipeController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\Controllers\\RecipeController.cs",
               "RelativeDocumentMoniker": "AngularProjectServer\\Controllers\\RecipeController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\AngularProject\\AngularProjectServer\\AngularProjectServer\\Controllers\\RecipeController.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\Controllers\\RecipeController.cs",
               "RelativeToolTip": "AngularProjectServer\\Controllers\\RecipeController.cs",
-              "ViewState": "AQIAAFkBAAAAAAAAAAAAwF8BAAArAAAA",
+              "ViewState": "AQIAABwBAAAAAAAAAAAuwFgBAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T12:52:21.87Z",
+              "WhenOpened": "2024-03-17T13:22:47.396Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "AngularProjectServer\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "AngularProjectServer\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACkAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T13:22:47.455Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\AngularProject\\AngularProjectServer\\AngularProjectServer\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "AngularProjectServer\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u05E8\u05D5\u05EA\u05D9\\\u05E9\u05E0\u05D4 \u05D1\u0027\\\u05D0\u05E0\u05D2\u05D5\u05DC\u05E8\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\AngularProject\\AngularProjectServer\\AngularProjectServer\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\Controllers\\UserController.cs",
               "RelativeToolTip": "AngularProjectServer\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T12:52:21.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-17T13:22:47.458Z"
             }
           ]
         }

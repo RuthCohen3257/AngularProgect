@@ -1,85 +1,79 @@
+
 .top-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  background-color: #ffffff;
-  color: white;
-}
+  background-color: Black;
 
-.mat-toolbar {
-  padding: 0 16px;
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .top-spacer {
+    height: 25px;
+    color: #a77325db;
+    text-align: center;
+    margin-top: 10px;
+  }
+.Remove orange{
+  color:#000;
+  background-color: white;
 }
+  .navbar {
+    height: 80px;
+    background-color: #a77325db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    .navbar-nav .nav-item .mat-icon,
+    .mat-chip button.mat-icon-button {
+      color: black;
+     }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
 
-.title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 10px;
+    .logo {
+      width: 10vw;
+      margin: 5px 0;
+    }
+
+    .navbar-nav {
+      justify-content: center;
+      color: #000;
+      font-weight: bold;
+      background-color: rgb(143 99 32);
+
+      .nav-item {
+        margin: 0 10px;
+        padding: 10px 20px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+          // background-color: #000000;
+          /* Change background color on hover */
+          color: white;
+          /* Change text color on hover */
+        }
+      }
+    }
+  }
 }
-
-.centered-content {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
+.navbar-nav:hover{
+  color: #ffffff;
 }
-
-.spacer {
-  flex: 1 1 auto;
-}
-
-.menu-button,
-.search-button,
-.profile-button {
-  margin-right: 10px;
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-}
-
-.mat-form-field {
-  width: 100%;
-}
-
-.profile-image {
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  margin-right: 5px;
-  background-color: blanchedalmond;
-}
-
-.badge {
-  margin-left: 5px;
-}
-
 @media (max-width: 768px) {
   .top-bar {
-    flex-direction: column;
+    .navbar {
+      height: 60px; /* שינוי גובה התפריט במסך קטן יותר */
+      .logo {
+        width: 15vw; /* שינוי רוחב הלוגו במסך קטן יותר */
+      }
+      .navbar-nav {
+        flex-direction: column; /* עמודת שניות אחריות במסך קטן יותר */
+        .nav-item {
+          margin: 10px 0; /* שינוי המרווחים בין פריטי התפריט במסך קטן יותר */
+          padding: 10px 0; /* שינוי הרווחים סביב פריטי התפריט במסך קטן יותר */
+        }
+      }
+    }
   }
-
-  .centered-content {
-    margin-left: 0;
-  }
-
-  .search-container,
-  .menu-button,
-  .profile-button {
-    margin-bottom: 10px;
-  }
-}
-.centered-content {
-  display: flex;
-  align-items: center;
-  margin: 0 auto; /* מרכז את הקישורים באופן אופקי */
-  margin-left: 130px;
-}
-::ng-deep .mat-menu-panel {
-  background-color: white; /* צביעת הרקע בצבע לבן */
 }

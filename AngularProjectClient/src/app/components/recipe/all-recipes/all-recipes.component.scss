@@ -1,99 +1,91 @@
 
-/* Sidebar */
-// p-sidebar {
-//   background-color: #707070; /* Set background color */
-//   padding: 20px; /* Add padding */
-//   border-radius: 5px;
-//   width: 30%; /* Set sidebar width */
-//   min-width: 250px; /* Set minimum width for smaller screens */
-//   top:30px;
-// }
-#recipe-list {
+.search-container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+  margin-left: 50px;
+  justify-content: space-between;
+  width: 80%;
+}
+.sideBar {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 4%;
-  width: calc(100vw - 15rem);
-  margin-inline: auto 0;
-}
-
-.slider-container {
-  
-  display: flex;
-  justify-content: flex-end;
-  width: 20%; /* כדי שהסרגל יוצג בצד ימין, עליך להגדיר את הרוחב שלו כ-100% */
-margin-top: 0%;}
-.recipe-page{
-  display: flex;
-  flex-direction: row;
-}
-
-#sidebardiv{
-  background-color:rgb(219, 204, 180) ; 
-}
-#search{
-  margin-top: 70px;
- margin-right: 40px;
-}
-
-// mat-slider .slider{
-//   // position: fixed;
-//   width: 10vw;
-//   left: 17vw;
-//   color: #80800096;
-  
-// }
-
-#buttonSideBar{
-  position: fixed;
-  left: 5vw;
-  top: 10vw;
-  width: 10vw;
-  height: 3vw;
-  background-color:#a77325db;
-  font-size: 2vw;
- 
-}
-#time-slider{
- 
-  top: 20vw;
- 
-} 
-#level-slider{
- 
-  top: 40vw;
- 
-}
-.categories-section{
-  
-  // position: fixed; 
-  top: 30vw;
-  left: 4vw;
-  text-align: left;
-}
-.h-filter{
-  text-align: left;
-  color: #a77325db;
-}
-
-// .mat-slider-horizontal .mat-slider-wrapp{
-//   transform: rotate(0deg);
-// }
-.p-sidebar-content{
-  background-color: #a77325db !important;
-}
-
-.checkBoxContent{
-  color:#a77325db;
-  font-weight: 100;
-}
-#side{
-  background-color: rgb(0 0 0 / 95%);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+
 }
-.cards-container{
+
+.search-input {
   display: flex;
-  gap: 1rem;
-  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+.custom-slider .mat-slider-track-fill {
+  background-color: #a77325db;
+}
+
+.custom-slider .mat-slider-thumb {
+  background-color: black;
+}
+
+.filterBtn {
+  width: fit-content;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.allRecipesContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.allRecipesCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.allRecipes .example-card {
+  flex-grow: 1;
+  margin: 10px;
+  max-width: calc(50% - 20px);
+}
+
+.no-results-message {
+  font-size: 30px;
+  color: black;
+  background-color: #f0f0f0;
+  padding: 50px;
+  border-radius: 5px;
+  text-align: center;
+}
+.spinner-grow{
+
+margin-top: 700px;
+margin: auto;
+margin-left: 50%;
+
+}
+
+.filter-category{
+  display: flex;
+  flex-direction: column;
+}
+.loading{
+  font-size:40px;
+}
+
+.btn{
+  background-color:  #a77325db;
+}
+@media screen and (max-width: 768px) {
+  .allRecipes .example-card {
+    max-width: calc(100% - 20px);
+  }
 }

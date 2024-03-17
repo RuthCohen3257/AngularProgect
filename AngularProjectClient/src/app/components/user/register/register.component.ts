@@ -6,6 +6,7 @@ import { UserService } from '../user.service';
 import { emailValidator } from '../email-validation';
 import { User } from '../../../models/user.model';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -29,9 +30,7 @@ export class RegisterComponent implements OnInit {
     this.name = this.route.snapshot.queryParamMap.get('name');
 
     this._userService.getUsers().subscribe(users => {
-      this.nextUserCode = users.length+1;
-      console.log("get-name" ,this.nextUserCode);
-      
+      this.nextUserCode = users.length;
     });
 
     this.registerForm = this.formBuilder.group({
@@ -41,12 +40,10 @@ export class RegisterComponent implements OnInit {
       Email: ['', [Validators.required, Validators.email, emailValidator]],
       Password: ['', [Validators.required, Validators.minLength(4)]]
     });
-    
-    
+
     this.registerForm.get('Password')?.valueChanges.subscribe(value => {
       this.updatePasswordStrength();
     });
-
   }
 
   updatePasswordStrength() {
@@ -73,19 +70,23 @@ export class RegisterComponent implements OnInit {
         next: (res) => {
           this.existingUser = res.some((user) => user.password === this.registerForm.value.password);
           if (this.existingUser) {
-            console.log("the user is exist");
-            this.router.navigate(["/user/login"], { queryParams: { name: u.name } })
+            Swal.fire('User already exists! Please try again');
+            this.registerForm.reset({ userName: this.name });            this.router.navigate(["/user/login"], { queryParams: { name: u.name } })
           }
           else {
             this._userService.addUser(u).subscribe({
               next: (res) => {
                 sessionStorage.setItem('userId',JSON.stringify(this.nextUserCode)); 
                 sessionStorage.setItem('user', JSON.stringify(u)); // Store user in session
-                console.log("added successfully", res);
+                Swal.fire({
+                  icon: 'success',
+                  title: 'You have successfully registered!',
+                })
                 this.router.navigate(['/recipe/recipes-list']);
               }
               , error: (err) => {
                 console.log(err);
+                Swal.fire("The form isnot invalid!");
               }
             });
           }

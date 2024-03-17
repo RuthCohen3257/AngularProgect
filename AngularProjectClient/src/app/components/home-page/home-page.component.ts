@@ -11,6 +11,6 @@ import {  NgbCarouselConfig, NgbCarouselModule, NgbSlideEvent, NgbSlideEventSour
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
-  images = [1, 2, 3].map((n) => `/assets/home-page/${n}.jpg`);
+  images = [1, 2, 3,4].map((n) => `/assets/home-page/${n}.jpg`);
   constructor() {}
 }

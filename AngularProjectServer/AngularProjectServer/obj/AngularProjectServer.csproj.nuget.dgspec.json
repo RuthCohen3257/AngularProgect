@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\רותי\\שנה ב'\\אנגולר\\פרויקט\\AngularProject\\AngularProjectServer\\AngularProjectServer\\AngularProjectServer.csproj": {}
+    "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\AngularProjectServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\רותי\\שנה ב'\\אנגולר\\פרויקט\\AngularProject\\AngularProjectServer\\AngularProjectServer\\AngularProjectServer.csproj": {
+    "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\AngularProjectServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\רותי\\שנה ב'\\אנגולר\\פרויקט\\AngularProject\\AngularProjectServer\\AngularProjectServer\\AngularProjectServer.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\AngularProjectServer.csproj",
         "projectName": "AngularProjectServer",
-        "projectPath": "C:\\Users\\User\\Desktop\\רותי\\שנה ב'\\אנגולר\\פרויקט\\AngularProject\\AngularProjectServer\\AngularProjectServer\\AngularProjectServer.csproj",
+        "projectPath": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\AngularProjectServer.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\רותי\\שנה ב'\\אנגולר\\פרויקט\\AngularProject\\AngularProjectServer\\AngularProjectServer\\obj\\",
+        "outputPath": "C:\\Users\\User\\Downloads\\AngularProject-main\\AngularProjectServer\\AngularProjectServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

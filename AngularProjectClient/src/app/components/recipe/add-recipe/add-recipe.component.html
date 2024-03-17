@@ -1,5 +1,7 @@
 <div id="allSteps">
-    <mat-stepper orientation="vertical" #stepper>
+
+    <mat-stepper orientation="vertical" #stepper color="warn">
+
             <mat-step [stepControl]="firstFormGroup">
                 <form [formGroup]="firstFormGroup">
                     <ng-template matStepLabel>Fill out recipe name</ng-template>
@@ -7,12 +9,12 @@
                         <mat-label>RecipeName</mat-label>
                         <input matInput formControlName="recipeName" required>
                     </mat-form-field>
-                    <div>
-                        <button mat-button matStepperNext>Next</button>
+                    <div class="container-btn">
+                        <button mat-button matStepperNext  class="btnCard">Next</button>
                     </div>
                 </form>
             </mat-step>
-        <mat-step [stepControl]="secondFormGroup">
+        <mat-step [stepControl]="secondFormGroup" color="warn">
             <form [formGroup]="secondFormGroup">
                 <ng-template matStepLabel>Choose recipe category</ng-template>
                 <mat-form-field>
@@ -24,14 +26,14 @@
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-                <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
+                <div class="container-btn">
+                    <button mat-button matStepperPrevious  class="btnCard">Back</button>
+                    <button mat-button matStepperNext  class="btnCard">Next</button>
                 </div>
             </form>
         </mat-step>
 
-        <mat-step [stepControl]="thirdFormGroup">
+        <mat-step [stepControl]="thirdFormGroup" color="warn">
             <form [formGroup]="thirdFormGroup">
                 <ng-template matStepLabel>Fill out preparation time</ng-template>
                 <mat-form-field>
@@ -39,14 +41,14 @@
                     <input matInput type="number" min="1" formControlName="preparationTime">
 
                 </mat-form-field>
-                <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
+                <div class="container-btn">
+                    <button mat-button matStepperPrevious  class="btnCard">Back</button>
+                    <button mat-button matStepperNext  class="btnCard">Next</button>
                 </div>
             </form>
         </mat-step>
 
-        <mat-step [stepControl]="forthFormGroup">
+        <mat-step [stepControl]="forthFormGroup" color="warn">
             <form [formGroup]="forthFormGroup">
                 <ng-template matStepLabel>Fill out level difficulty</ng-template>
                 <mat-form-field>
@@ -54,17 +56,17 @@
                     <input matInput type="number" min="1" max="5" formControlName="difficultyLevel">
 
                 </mat-form-field>
-                <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
+                <div class="container-btn">
+                    <button mat-button matStepperPrevious  class="btnCard">Back</button>
+                    <button mat-button matStepperNext  class="btnCard">Next</button>
                 </div>
             </form>
         </mat-step>
-        <mat-step [stepControl]="fifthFormGroup">
+        <mat-step [stepControl]="fifthFormGroup" color="warn">
             <form [formGroup]="fifthFormGroup">
                 <ng-template matStepLabel>Fill out the preperation steps</ng-template>
                 <div formArrayName="preparationSteps">
-                    <div *ngFor="let step of preparationStepsArray.controls; let i = index">
+                    <div *ngFor="let step of preparationStepsArray.controls; let i = index" >
                         <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>Preperation steps</mat-label>
 
@@ -73,19 +75,19 @@
                         <button mat-icon-button (click)="removeStep(i)">
                             <mat-icon>delete</mat-icon>
                         </button>
-                    </div>
+                    </div >
 
                     <br>
-                    <button mat-raised-button color="pink" type="button" (click)="addStep()">הוסף שלב הכנה</button>
+                    <button mat-raised-button color="pink" type="button" (click)="addStep()"  class="btn1">Add Preparation Step</button>
 
                 </div>
-                <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
+                <div class="container-btn">
+                    <button mat-button matStepperPrevious  class="btnCard">Back</button>
+                    <button mat-button matStepperNext  class="btnCard">Next</button>
                 </div>
             </form>
         </mat-step>
-        <mat-step [stepControl]="sixthFormGroup">
+        <mat-step [stepControl]="sixthFormGroup" color="warn">
             <form [formGroup]="sixthFormGroup">
                 <ng-template matStepLabel>Fill out the ingredients</ng-template>
                 <div formArrayName="ingredients">
@@ -99,39 +101,28 @@
                         </button>
                     </div>
                     <br>
-                    <button mat-raised-button color="pink" type="button" (click)="addIngredients()">הוסף רכיב</button>
+                    <button mat-raised-button color="pink" type="button" (click)="addIngredients()"  class="btn1">Add Ingredient</button>
 
                 </div>
-                <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
+                <div class="container-btn">
+                    <button mat-button matStepperPrevious  class="btnCard">Back</button>
+                    <button mat-button matStepperNext  class="btnCard">Next</button>
                 </div>
             </form>
         </mat-step>
 
-        <mat-step [stepControl]="seventhFormGroup">
+        <mat-step [stepControl]="seventhFormGroup" color="warn">
             <form [formGroup]="seventhFormGroup">
                 <ng-template matStepLabel>Fill out the image Route</ng-template>
                 <mat-form-field>
                     <mat-label>Image Route</mat-label>
                     <input matInput formControlName="imageRoute">
                 </mat-form-field>
-                <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <!-- <button mat-button matStepperNext>Next</button> -->
-                    <button mat-button (click)="addRecipe()">Save</button>
+                <div class="container-btn">
+                    <button mat-button matStepperPrevious  class="btnCard">Back</button>
+                    <button mat-button (click)="addRecipe()"  class="btnCard"><b>Save</b></button>
 
                 </div>
             </form>
         </mat-step>
-        <!-- <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-            <button mat-button (click)="addRecipe()">Save</button>
-        </div>
-    </mat-step> -->
-    </mat-stepper>
-</div>
+

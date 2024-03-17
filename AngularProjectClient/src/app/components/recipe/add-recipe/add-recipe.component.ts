@@ -9,8 +9,6 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-recipe',
-  // standalone: true,
-  // imports: [],
   templateUrl: './add-recipe.component.html',
   styleUrl: './add-recipe.component.scss'
 })
@@ -85,12 +83,14 @@ export class AddRecipeComponent implements OnInit {
 
   addRecipe() {
     console.log(this.recipeForm.value);
-    
+  
     if(!sessionStorage.getItem('userId')){
       Swal.fire({
         icon: 'error',
         title: ' No permission to add a recipe!',
-        text: 'You must first log in.'
+        text: 'You must first log in.',
+        cancelButtonColor: '#a77325db',
+        confirmButtonColor: '#a77325db',
       });
       this.router.navigate(['/user/login']);
     }
@@ -118,7 +118,9 @@ export class AddRecipeComponent implements OnInit {
             Swal.fire({
               icon: 'success',
               title: 'The recipe added successfully',
-              text: 'Thank You!'
+              text: 'Thank You!',
+              cancelButtonColor: '#a77325db',
+              confirmButtonColor: '#a77325db',
             });
             console.log("the recipe added successfully");
             this.router.navigate(['/recipe/recipes-list']);
@@ -133,7 +135,9 @@ export class AddRecipeComponent implements OnInit {
       Swal.fire({
         icon: 'error',
         title: ' Error!',
-        text: 'please fill out all the form.'
+        text: 'please fill out all the form.',
+        cancelButtonColor: '#a77325db',
+        confirmButtonColor: '#a77325db',
       });
       console.log("please fill out all the form");
       
@@ -146,4 +150,3 @@ export class AddRecipeComponent implements OnInit {
     });
   }
 }
-

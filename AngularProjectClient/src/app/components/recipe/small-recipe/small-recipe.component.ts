@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 import { Recipe } from '../../../models/recipe.model';
@@ -44,7 +45,6 @@ export class SmallRecipeComponent implements OnInit {
     this.isHovered = false;
   }
   toRecipeDetails() {
-    // if(this.formGroup.valid){
     if (sessionStorage.getItem("user")) {
       this.router.navigate(['recipe/recipes-list', this.recipe.recipeId], { queryParams: { index: this.recipe.recipeId } })
     }
@@ -68,11 +68,24 @@ export class SmallRecipeComponent implements OnInit {
   }
   deleteRecipe() {
     if (sessionStorage.getItem('userId') === JSON.stringify(this.recipe.userId)) {
-      this._recipe.deleteRecipe(this.recipe.recipeId).subscribe({ // Corrected method name
+      this._recipe.getById(this.recipe.recipeId).subscribe({ // Corrected method name
         next: () => {
           console.log('Recipe deleted successfully!');
           // Remove the component visually
           this.removeComponentFromDOM();
+          this._recipe.deleteRecipe(this.recipe.recipeId).subscribe({
+            next:()=>{
+              Swal.fire({
+                icon: 'success',
+                title: 'The recipe deleted successfully!',
+                text: 'See you!.'
+              });
+
+            },
+            error:()=>{
+              
+            }
+          })
           // Optional: Redirect or refresh the page
           this.router.navigate(['recipe/recipes-list']);
         },
@@ -125,5 +138,7 @@ export class SmallRecipeComponent implements OnInit {
 
 
 }
+
+
 
 

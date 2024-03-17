@@ -82,7 +82,8 @@ export class EditRecipeComponent {
       showCancelButton: true,
       confirmButtonText: "Save changes",
       denyButtonText: `Don't save`,
-      cancelButtonColor: '#FFFFFF',
+      cancelButtonColor: '#a77325db',
+      confirmButtonColor: '#a77325db',
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
@@ -109,7 +110,9 @@ export class EditRecipeComponent {
                 Swal.fire({
                   icon: 'success',
                   title: 'The recipe update successfully',
-                  text: 'See You!'
+                  text: 'See You!',
+                  cancelButtonColor: '#a77325db',
+                  confirmButtonColor: '#a77325db',
                 });
                 console.log("the recipe update successfully");
                 Swal.fire("Saved!", "", "success");
@@ -120,7 +123,9 @@ export class EditRecipeComponent {
                 Swal.fire({
                   icon: 'error',
                   title: 'Error!',
-                  text: 'An error occurred while fetching update.'
+                  text: 'An error occurred while fetching update.',
+                  cancelButtonColor: '#a77325db',
+                  confirmButtonColor: '#a77325db',
                 });
               }
             })    
@@ -129,7 +134,9 @@ export class EditRecipeComponent {
           Swal.fire({
             icon: 'error',
             title: ' Error!',
-            text: 'please fill out all the form.'
+            text: 'please fill out all the form.',
+            cancelButtonColor: '#a77325db',
+            confirmButtonColor: '#a77325db',
           });
           console.log("please fill out all the form");
           

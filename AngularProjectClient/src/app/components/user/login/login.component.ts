@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
   public isCorrPass!: boolean;
   showRotatingIcon = false
   userExists!: boolean;
+  public timerInterval: any;
+  public timer: any;
 
   constructor(private router: Router, private userService: UserService, private fb: FormBuilder) { }
   ngOnInit(): void {
@@ -59,17 +61,31 @@ export class LoginComponent implements OnInit {
                 }
               }
               else {
-                console.log("there is not this name")
                 Swal.fire({
-                  icon: 'error',
-                  title: 'New user!',
-                  text: 'User does not exist in the system,please sign up.'
+                  title: "Redirected to registration page",
+                  html: "You are being redirected to the registration page in <b></b> milliseconds.",
+                  timer: 1000,
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading(null);
+                    this.timer = Swal.getPopup()?.querySelector("b");
+                    const timerInterval = setInterval(() => {
+                      this.timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                    Swal.getPopup()?.addEventListener('mouseenter', () => clearInterval(timerInterval));
+                    Swal.getPopup()?.addEventListener('mouseleave', () => this.timerInterval = setInterval(() => {
+                      this.timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100));
+                  },
+                  willClose: () => {
+                    clearInterval(this.timerInterval);
+                  }
+                }).then((result) => {
+                  if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log("I was closed by the timer");
+                    this.router.navigate(['/user/register'], { queryParams: { userName: name } });
+                  }
                 });
-                this.showRotatingIcon = true; 
-                setTimeout(() => {
-                  this.router.navigate(['/user/register'], { queryParams: { name: name } });
-
-                }, 2000);
               }
             },
             (error) => {
@@ -86,3 +102,4 @@ export class LoginComponent implements OnInit {
         }
       }
 }
+
